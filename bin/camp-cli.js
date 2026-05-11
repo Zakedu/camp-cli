@@ -4,7 +4,7 @@
 import { closePrompt } from "../lib/prompt.js";
 import { fail } from "../lib/log.js";
 
-const VERSION = "0.1.0";
+const VERSION = "0.1.2";
 
 function parseArgs(argv) {
   const out = { _: [] };

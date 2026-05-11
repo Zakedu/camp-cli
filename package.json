@@ -1,12 +1,11 @@
 {
   "name": "@scaila/camp-cli",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "AI CAMP — 학생용 터미널 도우미. 과제 제출·커뮤니티 글 작성·자기 서비스 scaffold.",
   "type": "module",
   "bin": {
-    "camp-cli": "./bin/camp-cli.js"
+    "camp-cli": "bin/camp-cli.js"
   },
-  "main": "./lib/index.js",
   "files": [
     "bin",
     "lib",
@@ -20,12 +19,19 @@
     "test:doctor": "node bin/camp-cli.js doctor",
     "test:help": "node bin/camp-cli.js --help"
   },
-  "keywords": ["ai-camp", "scaila", "claude-code", "codex", "lms", "cli"],
+  "keywords": [
+    "ai-camp",
+    "scaila",
+    "claude-code",
+    "codex",
+    "lms",
+    "cli"
+  ],
   "author": "Day1company / Scaila",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Zakedu/camp-cli"
+    "url": "git+https://github.com/Zakedu/camp-cli.git"
   },
   "dependencies": {}
 }
