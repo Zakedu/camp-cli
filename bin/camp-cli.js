@@ -4,7 +4,7 @@
 import { closePrompt } from "../lib/prompt.js";
 import { fail } from "../lib/log.js";
 
-const VERSION = "0.1.2";
+const VERSION = "0.2.0";
 
 function parseArgs(argv) {
   const out = { _: [] };
@@ -44,8 +44,10 @@ function printHelp() {
                                                   --board: assignment-share | prompt-share |
                                                             skill-file-market | qna | free
 
+  npx @scaila/camp-cli agent [--codex] [--folder ./...]
+                                                  Claude Code (또는 --codex) 를 그 폴더에서 실행
   npx @scaila/camp-cli scaffold <name> [--type web|minimal]
-                                                  자기 서비스 시작용 스캐폴드 (.harness/ 통째 + spec.md)
+                                                  1주차 계획 기반 MVP 스캐폴드 (plan.md 자동 + index.html + golden/ + 마스터 프롬프트)
 
 환경 변수:
   CAMP_BASE_URL    기본 https://camp.scaila.kr  (로컬 dev: http://localhost:3000)
@@ -105,6 +107,12 @@ async function main() {
       case "scaffold": {
         const { default: scaffold } = await import("../lib/commands/scaffold.js");
         await scaffold(args);
+        return;
+      }
+      case "agent":
+      case "open": {
+        const { default: agent } = await import("../lib/commands/agent.js");
+        await agent(args);
         return;
       }
       default:

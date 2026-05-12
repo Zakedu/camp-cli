@@ -1,6 +1,6 @@
 {
   "name": "@scaila/camp-cli",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "AI CAMP — 학생용 터미널 도우미. 과제 제출·커뮤니티 글 작성·자기 서비스 scaffold.",
   "type": "module",
   "bin": {

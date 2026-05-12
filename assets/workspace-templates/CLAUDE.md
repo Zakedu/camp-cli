@@ -49,6 +49,22 @@ npx @scaila/camp-cli scaffold <name> --type web
 - 파일 첨부(이미지·zip)는 CLI 가 안 됨 → "{{BASE_URL}}/dashboard 에서 올리세요" 안내.
 - 막히면 `troubleshooting.md` 또는 `npx @scaila/camp-cli doctor`.
 
+## 학생이 자주 하는 말 → 너가 알아서 명령 매핑
+
+| 학생의 말 | 너가 하는 일 |
+|---|---|
+| "오늘 수업 준비해줘" | course-manifest.json 읽고 현재 주차 자료 안내 |
+| "이번 주 자료 같이 읽으면서 정리해줘" | practice/week-N/ 의 .md 들 읽고 요약·핵심 정리 |
+| "ch{N}-pre 과제 초안 잡아줘" | assignments.json 의 acceptanceCriteria 확인 → outputs/ch{N}-pre.md 초안 작성 |
+| "내 outputs/ch{N}.md 완료 기준 다 충족했는지 봐줘" | 파일 읽고 acceptanceCriteria 1:1 매핑 검토 → 부족한 부분 알려줌 |
+| "제출까지 해줘" | 미리보기 보여주고 학생 동의 받은 후 → `npx @scaila/camp-cli assignment submit <id> --file outputs/<file>.md --yes` |
+| "과제 공유 게시판에 올려줘" | 미리보기 → 동의 → `community post --board assignment-share --title "..." --file outputs/x.md --yes` |
+| "프롬프트 공유에 글 하나" | `community post --board prompt-share --title "..." --content "..." --yes` |
+| "체크리스트 8차원 짚어줘" | `.harness/checklist.md` 의 A~H 차원을 차례로 질문 → 답을 `spec.md` 에 누적 |
+| "패턴 골라줘" | `.harness/patterns/` 8개 중 spec.md 기반으로 3~4개 추천 + 안 채택할 것 이유 |
+| "디자인 토큰 적용해줘" | `.harness/tokens.json` 기반으로 `tokens.css` 만들기, brand 색은 학생이 지정 |
+| "새 서비스 만들 거야" | `npx @scaila/camp-cli scaffold <name> --type web` 권유 + 실행 |
+
 ## 디버그
 - `CAMP_DEBUG=1` env 로 CLI 가 스택트레이스 출력.
 - `CAMP_BASE_URL` 로 다른 서버 가리키게 가능 (로컬 dev 등).
